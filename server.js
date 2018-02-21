@@ -28,9 +28,34 @@ var articles = {
     }
     
 };
+var template = function(article){
+return `
+<!doctype html>
+<html>
+    <head>
+        <link href="/ui/style.css" rel="stylesheet" />
+        <meta name="viewport" initial-scale="1">
+    </head>
+    <body>
+        <header>
+            <nav>
+                <a href="/">Home</a>
+            </nav>
+        </header>
+        <section id="articlehead">
+            <h3>${article.heading}</h3>
+            <hr>
+            
+        </section>
+        <script type="text/javascript" src="/ui/main.js">
+        </script>
+    </body>
+</html>
+`;
+};
 app.get('/:articles', function (req, res) {
    var article = articles[req.params.articles];
-   res.send(article);
+   res.send(template(article));
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
