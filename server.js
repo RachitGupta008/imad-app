@@ -23,7 +23,7 @@ var articles = {
     
 };
 app.get('/:articles', function (req, res) {
-   res.send(req.params.articles); 
+   var article = articles[req.params.articles];
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
