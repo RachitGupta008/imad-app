@@ -4,6 +4,7 @@ console.log('Loaded!');
     req.onreadystatechange = function (){
         
             if(req.readyState == 4 && req.status == 200){
+                console.log(req.responseText);
                 var count = req.responseText;
                 console.log(count);
                 var span  = document.getElementById("article1no");
