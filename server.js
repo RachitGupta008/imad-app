@@ -78,13 +78,20 @@ return `
 </html>
 `;
 };
-app.get('/article/:articles', function (req, res) {
+app.get('/article', function (req, res) {
     count++;
    
-   var article = articles[req.params.articles];
-   console.log(article);
+   var articleId = req.query.Id;
+   pool.query(`Select * FROM articles WHERE id= ${articleId}`, function(err, result) {
+       if(err){
+           res.send(err.toString());
+       }
+       else{
+          console.log(typeOf(result));
+       }
+   });
    
-   res.send(template(article));
+  // res.send(template(article));
 });
 
 // Do not change port, otherwise your app won't run on IMAD servers
