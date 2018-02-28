@@ -5,6 +5,7 @@ console.log('Loaded!');
         if(req.onreadystatechange === XMLHttpRequest.DONE){
             if(req.status === 200){
                 var count = req.responseText;
+                alert(count);
                 var span  = document.getElementById("article1no");
                 span.innerHTML = count.toString();
             }
