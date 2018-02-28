@@ -60,7 +60,7 @@ return `
 </html>
 `;
 };
-app.get('/:articles', function (req, res) {
+app.get('/article/:articles', function (req, res) {
     
    
    var article = articles[req.params.articles];
