@@ -62,7 +62,7 @@ return `
 `;
 };
 app.get('/:articles', function (req, res) {
-    count++;
+   count = count +1;
    var article = articles[req.params.articles];
    res.send(template(article));
 });
