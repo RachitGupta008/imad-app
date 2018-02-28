@@ -87,7 +87,7 @@ app.get('/article', function (req, res) {
            res.send(err.toString());
        }
        else{
-          console.log(typeOf(result));
+          console.log(typeof(result));
        }
    });
    
