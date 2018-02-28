@@ -3,7 +3,7 @@ console.log('Loaded!');
     var req =  new XMLHttpRequest();
     req.onreadystatechange = function (){
         
-            if(req.readystate == 4 && req.status == 200){
+            if(req.readyState == 4 && req.status == 200){
                 var count = req.responseText;
                 alert(count);
                 var span  = document.getElementById("article1no");
