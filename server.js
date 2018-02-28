@@ -16,6 +16,11 @@ app.get('/ui/style.css', function (req, res) {
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
+var count = 0;
+app.get('/count', function (req, res) {
+    count++;
+    res.send(count.toString());
+});
 var articles = {
     'article-one' :  {
         heading : "Article 1"
