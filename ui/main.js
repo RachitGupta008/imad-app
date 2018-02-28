@@ -11,6 +11,6 @@ console.log('Loaded!');
         }
     };
     
-    req.open('GET',"/counter",true);
+    req.open('GET',"/count",true);
     req.send();
 })();
