@@ -21,7 +21,6 @@ app.get('/ui/main.js', function (req, res) {
 });
 var count = 0;
 app.get('/count', function (req, res) {
-    
     res.send(count.toString());
 });
 var articles = {
