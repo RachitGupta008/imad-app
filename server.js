@@ -61,9 +61,11 @@ return `
 `;
 };
 app.get('/:articles', function (req, res) {
+    
    
    var article = articles[req.params.articles];
-   count++;
+   log(article);
+   
    res.send(template(article));
 });
 
