@@ -64,7 +64,7 @@ app.get('/:articles', function (req, res) {
     
    
    var article = articles[req.params.articles];
-   log(article);
+   console.log(article);
    
    res.send(template(article));
 });
