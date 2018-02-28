@@ -13,6 +13,6 @@ console.log('Loaded!');
         
     };
     
-    req.open('GET',"/count",true);
-    req.send();
+    req.open('GET',"/counter",true);
+    req.send(null);
 })();
