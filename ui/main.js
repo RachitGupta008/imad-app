@@ -12,7 +12,6 @@ console.log('Loaded!');
             }
         
     };
-    
-    req.open('GET',"/api/counter",true);
+    req.open('GET','http://rachit88888888.imad.hasura-app.io/api/counter',true);
     req.send(null);
 })();
