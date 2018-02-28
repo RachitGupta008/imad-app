@@ -6,7 +6,7 @@ console.log('Loaded!');
             if(req.status === 200){
                 var count = req.responseText;
                 var span  = document.getElementById("article1no");
-                span.innerHTML = count;
+                span.innerHTML = count.toString();
             }
         }
     };
