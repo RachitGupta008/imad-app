@@ -87,7 +87,7 @@ app.get('/article', function (req, res) {
            res.send(err.toString());
        }
        else{
-          console.log(typeof(result));
+          console.log(typeof(result.rows));
        }
    });
    
