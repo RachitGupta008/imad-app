@@ -13,6 +13,6 @@ console.log('Loaded!');
         
     };
     
-    req.open('GET',"/counter",true);
+    req.open('GET',"/api/counter",true);
     req.send(null);
 })();
