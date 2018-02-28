@@ -18,7 +18,7 @@ app.get('/ui/madi.png', function (req, res) {
 });
 var count = 0;
 app.get('/count', function (req, res) {
-    count++;
+    
     res.send(count.toString());
 });
 var articles = {
@@ -59,6 +59,7 @@ return `
 `;
 };
 app.get('/:articles', function (req, res) {
+    count++;
    var article = articles[req.params.articles];
    res.send(template(article));
 });
