@@ -61,7 +61,7 @@ return `
 `;
 };
 app.get('/article/:articles', function (req, res) {
-    
+    count++;
    
    var article = articles[req.params.articles];
    console.log(article);
