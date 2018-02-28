@@ -81,7 +81,7 @@ return `
 app.get('/article', function (req, res) {
     count++;
    
-   var articleId = req.query.Id;
+   var articleId = req.query.id;
    pool.query(`Select * FROM articles WHERE id= ${articleId}`, function(err, result) {
        if(err){
            res.send(err.toString());
