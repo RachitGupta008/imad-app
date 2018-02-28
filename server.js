@@ -20,7 +20,7 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 var count = 0;
-app.get('/count', function (req, res) {
+app.get('/counter', function (req, res) {
     res.send(count.toString());
 });
 var articles = {
