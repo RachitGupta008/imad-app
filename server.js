@@ -57,7 +57,7 @@ var articles = {
 var genSalt = function (){
   return crypto.randomBytes(256).toString('hex');
 };
-var hash = function (key, salt){
+var hasher = function (key, salt){
     var pass =  crypto.pbkdf2Sync(key, salt, 10000, 64, 'sha512');
     return ['pbkdf2',salt,'10000',pass.toString('hex')].join($);
 };
@@ -104,7 +104,7 @@ app.get('/article', function (req, res) {
 app.get('/login/:name', function(req, res){
     var name = req.params.name;
     var salt = genSalt();
-    var hash = hash(name,salt);
+    var hash = hasher(name,salt);
     res.send(hash);
     
     
