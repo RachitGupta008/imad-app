@@ -2,7 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
-
+var pbkdf2 = require('pbkdf2');
+var crypto = require('crypto');
 const pool = new Pool({
   user: 'rachit88888888',
   host: 'db.imad.hasura-app.io',
@@ -53,6 +54,13 @@ var articles = {
     }
     
 };
+var genSalt = function (){
+  return crypto.randomBytes(256).toString('hex');
+};
+var hash = function (key, salt){
+    var pass =  crypto.pbkdf2Sync(key, salt, 10000, 64, 'sha512');
+    return ['pbkdf2',salt,'10000',pass.toString('hex')].join($);
+};
 var template = function(article){
 return `
 <!doctype html>
@@ -93,7 +101,14 @@ app.get('/article', function (req, res) {
    
   // res.send(template(article));
 });
-
+app.get('/login/:name', function(req, res){
+    var name = req.params.name;
+    var salt = genSalt();
+    var hash = hash(name,salt);
+    res.send(hash);
+    
+    
+});
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
 
