@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
-var pbkdf2 = require('pbkdf2');
+
 var crypto = require('crypto');
 const pool = new Pool({
   user: 'rachit88888888',
