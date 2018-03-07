@@ -15,3 +15,6 @@ console.log('Loaded!');
     req.open('GET','http://rachit88888888.imad.hasura-app.io/api/counter',true);
     req.send(null);
 })();
+function log(){
+    alert('hi');
+}
