@@ -108,7 +108,7 @@ app.post('/signup', jsonParser, function(req, res){
     var pass = req.body.password;
     var salt = genSalt();
     var hash = hasher(pass,salt);
-    pool.query(`INSERT INTO 'users'(username,password) VALUES ($1,$2)`, [name,hash], function (err,result){
+    pool.query(`INSERT INTO users (username,password) VALUES ($1, $2)`, [name,hash], function (err,result){
         if(err){
             res.status(500).send(err.toString());
         }
