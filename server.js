@@ -59,7 +59,7 @@ var genSalt = function (){
 };
 var hasher = function (key, salt){
     var pass =  crypto.pbkdf2Sync(key, salt, 10000, 64, 'sha512');
-    return ['pbkdf2',salt,'10000',pass.toString('hex')].join($);
+    return ['pbkdf2',salt,'10000',pass.toString('hex')].join('$');
 };
 var template = function(article){
 return `
