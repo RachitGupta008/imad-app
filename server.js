@@ -2,6 +2,8 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
+var bodyParser = require('body-parser');
+var jsonParser = bodyParser.json();
 
 var crypto = require('crypto');
 const pool = new Pool({
@@ -101,11 +103,19 @@ app.get('/article', function (req, res) {
    
   // res.send(template(article));
 });
-app.get('/login/:name', function(req, res){
-    var name = req.params.name;
+app.post('/signup', jsonParser, function(req, res){
+    var name = req.body.username;
+    var pass = req.body.password;
     var salt = genSalt();
-    var hash = hasher(name,salt);
-    res.send(hash);
+    var hash = hasher(password,salt);
+    pool.query(`INSERT INTO 'users' WHERE username= ${name} password= ${hash}`,function (err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            res.send("user successfully created using name: "+name );
+        }
+    });
     
     
 });
