@@ -62,9 +62,9 @@ body {
    color: wheat; 
    cursor: pointer;
 }
-.col-1-2.active {
+.col-1-2 .active {
     border-top: 1px solid black;
 }
 .hidden {
-    visibility: hidden;
+    display: none;
 }
