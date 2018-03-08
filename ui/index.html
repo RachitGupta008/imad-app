@@ -8,11 +8,20 @@
         <div id="logoverlay">
           <div id="loginform">
               <div class="nav">
-                  <div class="col-1-2 active" onclick="changeAct(signup,login);" id="login">Login</div>
-                  <div class="col-1-2" onclick="changeAct(login,signup);" id="signup">Signup</div>
+                  <div class="col-1-2 active" onclick="changeAct(signup,login,loginInfo);" id="login">Login</div>
+                  <div class="col-1-2" onclick="changeAct(login,signup,signupInfo);" id="signup">Signup</div>
               </div>
+             
+              <div id="loginInfo" >
               <input type="text" name="username" placeholder="username" class="textin">
               <input type="password" name="password" placeholder="password" class="textin">
+              </div>
+              <div id="signupInfo" class="hidden">
+              <input type="text" name="name" placeholder="name" class="textin">
+              <input type="email" name="email" placeholder="email" class="textin">
+              <input type="text" name="username" placeholder="username" class="textin">
+              <input type="password" name="password" placeholder="password" class="textin">
+              </div>
               </div>
           </div>   
          
