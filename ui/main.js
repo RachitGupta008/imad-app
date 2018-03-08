@@ -18,7 +18,7 @@ console.log('Loaded!');
 function log(){
     alert('hi');
 }
-var b = document.getElementById("signup");
+var b = document.getElementById("signup/login");
 b.onclick  = function (){
    
     document.getElementById("logoverlay").style.height = "100%";
