@@ -8,14 +8,14 @@
         <div id="logoverlay">
           <div id="loginform">
               <div class="nav">
-                  <div class="col-1-2 active">Login</div>
-                  <div class="col-1-2">Signup</div>
+                  <div class="col-1-2 active" onclick="changeAct(signup,login);" id="login">Login</div>
+                  <div class="col-1-2" onclick="changeAct(login,signup)" id="signup">Signup</div>
               </div>
               <input type="text" name="username" placeholder="username" class="textin">
               <input type="password" name="password" placeholder="password" class="textin">
               </div>
           </div>   
-        
+         
         <header>
             <nav>
                 <a href="#articles">Articles</a>
@@ -32,7 +32,7 @@
                 <li><a href="article/article-three">Article Three</a></li>
             </ul>
             
-                <button id="signup" name="signup" >signup </button>
+                <button id="signup/login" name="signup" >signup </button>
             
         </section>
         <script type="text/javascript" src="/ui/main.js">
