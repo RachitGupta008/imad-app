@@ -25,3 +25,11 @@ b.onclick  = function (){
     document.getElementById("logoverlay").style.width = "100%";
     document.getElementById("loginform").style.display = "block";
 };
+var login = document.getElementById("login");
+var signup = document.getElementById("signup");
+
+
+function changeAct(e1,e2){
+    e1.classList.remove("active");
+    e2.classList.add("active");
+}
