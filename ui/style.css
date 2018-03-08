@@ -57,3 +57,7 @@ body {
     padding-bottom: 5px;
     width: 49%;
 }
+.col-1-2:hover {
+   color: green; 
+   cursor: pointer;
+}
