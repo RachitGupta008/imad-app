@@ -20,6 +20,6 @@ function log(){
 }
 var b = document.getElementById("submit");
 b.onclick  = function (){
-    document.getElementById("logoverlay").style.display = "block";
+   
     document.getElementById("logoverlay").style.height = "100%";
 };
