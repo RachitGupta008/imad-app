@@ -65,3 +65,6 @@ body {
 .col-1-2.active {
     border-top: 1px solid black;
 }
+.hidden {
+    display: none;
+}
