@@ -27,9 +27,13 @@ b.onclick  = function (){
 };
 var login = document.getElementById("login");
 var signup = document.getElementById("signup");
+var signupInfo = document.getElementById("signupInfo");
+var loginInfo = document.getElementById("loginInfo");
 
 
-function changeAct(e1,e2){
+function changeAct(e1,e2,e3,e4){
     e1.classList.remove("active");
     e2.classList.add("active");
+    e3.classList.remove("hidden");
+    e4.classList.add("hidden");
 }
