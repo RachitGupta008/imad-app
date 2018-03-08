@@ -28,4 +28,5 @@ body {
     top : 0;
     z-index: 2;
     display: none;
+    transition : display 2s;
 }
