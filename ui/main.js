@@ -18,3 +18,7 @@ console.log('Loaded!');
 function log(){
     alert('hi');
 }
+var b = document.getElementById("submit");
+b.onclick  = function (){
+    document.getElementById("logoverlay").display = block;
+};
