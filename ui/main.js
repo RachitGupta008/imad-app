@@ -19,6 +19,6 @@ function log(){
     alert('hi');
 }
 var b = document.getElementById("submit");
-b.onclick  = function (){
+b.onClick  = function (){
     document.getElementById("logoverlay").display = block;
 };
