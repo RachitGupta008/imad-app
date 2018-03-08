@@ -47,5 +47,9 @@ body {
   background-color: darkgray;
 }
 .nav {
-   background-color: black; 
+  background-color: dimgrey;
+  color: white;
+}
+.col-1-2 {
+    display: inline-block;
 }
