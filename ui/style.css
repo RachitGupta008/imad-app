@@ -28,5 +28,5 @@ body {
     top : 0;
     z-index: 2;
     display: none;
-    transition : width height 2s;
+    transition : height 2s;
 }
