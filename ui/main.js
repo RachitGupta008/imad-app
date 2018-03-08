@@ -20,7 +20,8 @@ function log(){
 }
 var b = document.getElementById("signup");
 b.onclick  = function (){
-   document.getElementById("logoverlay").style.display = "block";
+   
     document.getElementById("logoverlay").style.height = "100%";
     document.getElementById("logoverlay").style.width = "100%";
+    document.getElementById("loginform").style.display = "block";
 };
