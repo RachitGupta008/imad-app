@@ -130,7 +130,7 @@ app.post('/login', jsonParser, function(req, res){
             var hash = results[0].password;
             var nhash = hash.split('$');
             nhash = hasher(pass,nhash[1]);
-            if(nhash==pass){
+            if(nhash==hash){
                 res.send("you have been logged in successfully");
             }
             else{
