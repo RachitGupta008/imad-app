@@ -69,5 +69,13 @@ body {
     display: none;
 }
 #close {
-    
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 14px;
+    width: 14px;
+    font-size: 11px;
+    transform: translateY(-70%);
+    border-radius: 14px;
+    border: solid dimgrey;
 }
