@@ -4,7 +4,7 @@ console.log('Loaded!');
     req.onreadystatechange = function (){
         
             if(req.readyState == 4 && req.status == 200){
-                console.log(req.responseText);
+                
                 var count = req.responseText;
                 console.log(count);
                 var span  = document.getElementById("article1no");
@@ -37,3 +37,24 @@ function changeAct(e1,e2,e3,e4){
     e3.classList.remove("hidden");
     e4.classList.add("hidden");
 }
+var loginbutton = document.getElementById("loginbutton");
+var signupbutton = document.getElementById("signup");
+signupbutton.onclick = function () {
+    
+};
+loginbutton.onclick = function (){
+var loginObj = {
+    "username": document.getElementById("logname").value,
+    "password": document.getElementById("logpass").value
+    };
+    var req =  new XMLHttpRequest();
+    req.onreadystatechange = function (){
+        if(req.readyState == 4 && req.status == 200){
+            console.log(req.responseText);
+        }
+        req.open('POST','/login');
+        req.setRequestHeader("Content-Type","application/json");
+        req.send(JSON.stringify(loginobj));
+    };
+    
+};
