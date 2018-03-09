@@ -18,6 +18,12 @@ console.log('Loaded!');
 function log(){
     alert('hi');
 }
+var closer = document.getElementById("close");
+closer.onclick = function (){
+    document.getElementById("logoverlay").style.height = "0";
+    document.getElementById("logoverlay").style.width = "0";
+    document.getElementById("loginform").style.display = "none";
+};
 var b = document.getElementById("signup/login");
 b.onclick  = function (){
    
