@@ -76,6 +76,8 @@ body {
     width: 14px;
     font-size: 11px;
     transform: translateY(-70%);
+    transform: translateX(-70%);
     border-radius: 14px;
+    background-color: dimgrey;
     border: solid dimgrey;
 }
