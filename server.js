@@ -104,20 +104,40 @@ app.get('/article', function (req, res) {
   // res.send(template(article));
 });
 app.post('/signup', jsonParser, function(req, res){
-    var name = req.body.username;
+    var name = req.body.name;
+    var user = req.body.username;
     var pass = req.body.password;
     var salt = genSalt();
     var hash = hasher(pass,salt);
-    pool.query(`INSERT INTO users (username,password) VALUES ($1, $2)`, [name,hash], function (err,result){
+    pool.query(`INSERT INTO users (username,password) VALUES ($1, $2)`, [user,hash], function (err,result){
         if(err){
             res.status(500).send(err.toString());
         }
         else{
-            res.send("user successfully created using name: "+name );
+            res.send("user successfully created using name: "+user );
         }
     });
-    
-    
+});
+app.post('/login', jsonParser, function(req, res){
+    var user = req.body.username;
+    var pass = req.body.password;
+    pool.query('SELECT * FROM users WHERE username = $1',[user],function (err,result){
+        if(err){
+            res.status(500).send(err.toString());
+        }
+        else{
+            var results = result.rows;
+            var hash = results[0].password;
+            var nhash = hash.split('$');
+            nhash = hasher(pass,nhash[1]);
+            if(nhash==pass){
+                res.send("you have been logged in successfully");
+            }
+            else{
+                res.status(403).send("username/password incorrect");
+            }
+        }
+    });
 });
 // Do not change port, otherwise your app won't run on IMAD servers
 // Use 8080 only for local development if you already have apache running on 80
