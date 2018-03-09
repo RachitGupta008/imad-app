@@ -45,11 +45,11 @@ signupbutton.onclick = function () {
     "password": document.getElementById("signpass").value,
     "name" : document.getElementById("signname").value
     };
-    makeReq(signObj);
+    makeReq(signObj,'/signup');
     
     
 };
-function makeReq(obj){
+function makeReq(obj,endpoint){
     var req =  new XMLHttpRequest();
     req.onreadystatechange = function (){
         if(req.readyState == 4 && req.status == 200){
@@ -57,7 +57,7 @@ function makeReq(obj){
         }
         
     };
-    req.open('POST','/signup');
+    req.open('POST',endpoint);
         req.setRequestHeader("Content-Type","application/json");
         req.send(JSON.stringify(obj));
 }
@@ -67,5 +67,5 @@ var loginObj = {
     "username": document.getElementById("logname").value,
     "password": document.getElementById("logpass").value
     };
-   makeReq(loginObj);
+   makeReq(loginObj,'/login');
 };
