@@ -52,9 +52,9 @@ var loginObj = {
         if(req.readyState == 4 && req.status == 200){
             console.log(req.responseText);
         }
-        req.open('POST','/login');
+        
+    };
+    req.open('POST','/login');
         req.setRequestHeader("Content-Type","application/json");
         req.send(JSON.stringify(loginobj));
-    };
-    
 };
