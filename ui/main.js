@@ -40,13 +40,16 @@ function changeAct(e1,e2,e3,e4){
 var loginbutton = document.getElementById("loginbutton");
 var signupbutton = document.getElementById("signup");
 signupbutton.onclick = function () {
+    var signObj = {
+    "username": document.getElementById("signuser").value,
+    "password": document.getElementById("signpass").value,
+    "name" : document.getElementById("signname").value
+    };
+    makeReq(signObj);
+    
     
 };
-loginbutton.onclick = function (){
-var loginObj = {
-    "username": document.getElementById("logname").value,
-    "password": document.getElementById("logpass").value
-    };
+function makeReq(obj){
     var req =  new XMLHttpRequest();
     req.onreadystatechange = function (){
         if(req.readyState == 4 && req.status == 200){
@@ -54,7 +57,15 @@ var loginObj = {
         }
         
     };
-    req.open('POST','/login');
+    req.open('POST','/signup');
         req.setRequestHeader("Content-Type","application/json");
-        req.send(JSON.stringify(loginObj));
+        req.send(JSON.stringify(obj));
+}
+
+loginbutton.onclick = function (){
+var loginObj = {
+    "username": document.getElementById("logname").value,
+    "password": document.getElementById("logpass").value
+    };
+   makeReq(loginObj);
 };
