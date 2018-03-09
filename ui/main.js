@@ -56,5 +56,5 @@ var loginObj = {
     };
     req.open('POST','/login');
         req.setRequestHeader("Content-Type","application/json");
-        req.send(JSON.stringify(loginobj));
+        req.send(JSON.stringify(loginObj));
 };
