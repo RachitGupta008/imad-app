@@ -81,3 +81,6 @@ body {
     background-color: dimgrey;
     border: solid dimgrey;
 }
+#close:hover {
+    color: black;
+}
