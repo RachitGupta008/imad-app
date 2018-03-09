@@ -38,7 +38,7 @@ function changeAct(e1,e2,e3,e4){
     e4.classList.add("hidden");
 }
 var loginbutton = document.getElementById("loginbutton");
-var signupbutton = document.getElementById("signupbutton");
+var signupbutton = document.getElementById("signbutton");
 signupbutton.onclick = function () {
     var signObj = {
     "username": document.getElementById("signuser").value,
